@@ -1,0 +1,10 @@
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\bin\Debug\ComputacionCientifica.exe.config
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\bin\Debug\ComputacionCientifica.exe
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\bin\Debug\ComputacionCientifica.pdb
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.csproj.AssemblyReference.cache
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.Form1.resources
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.Properties.Resources.resources
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.csproj.GenerateResource.cache
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.csproj.CoreCompileInputs.cache
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.exe
+D:\Kevin Respaldos\Desktop\ComputacionCientifica\ComputacionCientifica\obj\Debug\ComputacionCientifica.pdb
