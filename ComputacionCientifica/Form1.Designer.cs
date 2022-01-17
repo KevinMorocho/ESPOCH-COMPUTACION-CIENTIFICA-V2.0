@@ -207,11 +207,11 @@ namespace ComputacionCientifica
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(788, 214);
+            this.button13.Location = new System.Drawing.Point(785, 185);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 23);
             this.button13.TabIndex = 18;
-            this.button13.Text = "button13";
+            this.button13.Text = "Onda 3D";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 

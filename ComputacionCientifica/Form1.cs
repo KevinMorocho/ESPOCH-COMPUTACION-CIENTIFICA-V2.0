@@ -465,11 +465,41 @@ namespace ComputacionCientifica
             Onda o = new Onda();
             double t = 0;
             //Sin animacion
-            o.v = 9.3;
-            o.w = 2.5;
-            o.t = 0;
-            o.grafOnda3d(lienzo);
-            EspacioT.Image = lienzo;
+            //o.v = 9.3;
+            //o.w = 2.5;
+            //o.t = 0;
+            //o.grafOnda3d(lienzo);
+            //EspacioT.Image = lienzo;
+
+            //Animacion Una onda 3D
+            o.v = 9.8;
+            o.w = 1.5;
+            do
+            {
+                o.t = t;
+                o.grafOnda3d(lienzo);
+                EspacioT.Image = lienzo;
+                Refresh();
+                lienzo = null;
+                lienzo = new Bitmap(650, 500);
+                Thread.Sleep(5);
+                t = t + 0.01;
+            } while (t <= 4);
+
+            //Animacion Dos ondas 3D
+            //do
+            //{
+            //    o.t = t;
+            //    o.ondaMoverx2(lienzo);
+            //    EspacioT.Image = lienzo;
+            //    Refresh();
+            //    lienzo = null;
+            //    lienzo = new Bitmap(650, 500);
+            //    Thread.Sleep(5);
+            //    t = t + 0.01;
+            //} while (t <= 4);
+
+
         }
     }
 }

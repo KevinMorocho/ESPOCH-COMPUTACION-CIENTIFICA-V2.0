@@ -9,7 +9,7 @@ namespace ComputacionCientifica
 {
     class Onda:Vector
     {
-        public double m=0.2,t,v,w, w1, w2,x, y, z, z1, z2, z3; 
+        public double m=0.5,t,v,w, w1, w2,x, y, z, z1, z2, z3; 
         public int color;
         public Color c;
         public Color[] Paleta = new Color[16];
@@ -98,9 +98,9 @@ namespace ComputacionCientifica
                     v3d.x0 = x;
                     v3d.y0 = y;
                     z = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 0) * (y - 0))) - v * t;
-                    z = m * Math.Sin(z);
+                    z = 0.5 * Math.Sin(z);
                     v3d.z0 = z;
-                    v3d.color0 = Color.Blue;
+                    v3d.color0 = Color.DarkRed;
                     v3d.Encender(pantalla);
                     y = y + 0.1;
                 } while (y <= 5);
@@ -113,31 +113,29 @@ namespace ComputacionCientifica
             Vector3D v3d = new Vector3D();
             double p, p2, z, z0;
 
-            x = -10;
+            x = -7;
             do
             {
-                y = -5;
+                y = -6;
                 do
                 {
                     v3d.x0 = x;
                     v3d.y0 = y;
 
                     p = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
-                    z = 0.2 * Math.Sin(p);
-                    v3d.color0 = Color.Blue;
-                    v3d.z0 = z;
-                    v3d.Encender(bitmap);
+                    z = 0.5 * Math.Sin(p);
 
-                    p2 = w * (Math.Sqrt((x -0) * (x -0) + (y +3) * (y +3))) - v * t;
-                    z0 = 0.2 * Math.Sin(p2);
-                    v3d.z0 = z0;
+                    p2 = w * (Math.Sqrt((x +0) * (x +0) + (y +3) * (y +3))) - v * t;
+                    z0 = 0.5 * Math.Sin(p2);
+                  
+                    v3d.z0 = z + z0;
                     v3d.color0 = Color.Black;
                     v3d.Encender(bitmap);
 
-                    y = y + 0.1;
-                } while (y <= 5);
-                x = x + 0.1;
-            } while (x <= 10);
+                    y = y + 0.05;
+                } while (y <= 6);
+                x = x + 0.05;
+            } while (x <= 7);
 
         }
     }
