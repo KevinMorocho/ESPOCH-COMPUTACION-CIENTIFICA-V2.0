@@ -9,7 +9,7 @@ namespace ComputacionCientifica
 {
     class Onda:Vector
     {
-        public double m=0.5,t,v,w, w1, w2,x, y, z, z1, z2, z3; 
+        public double m=0.5,t,v,w, w1, w2,x, y, z, z1, z2, z3,z4,z5,z6,z7,z8,z9,z10,z11,z12,z13,z14,z15,z16,z17,z18,z19,z20,z21; 
         public int color;
         public Color c;
         public Color[] Paleta = new Color[16];
@@ -35,8 +35,8 @@ namespace ComputacionCientifica
             //for (int k = 0; k < 16; k++)
             //{
             //    int r = Convert.ToInt32(0);
-            //    int g = Convert.ToInt32(17*k);
-            //    int b = Convert.ToInt32((10.34*k)+100);
+            //    int g = Convert.ToInt32(17 * k);
+            //    int b = Convert.ToInt32((10.34 * k) + 100);
             //    Paleta[k] = Color.FromArgb(r, g, b);
             //}
         }
@@ -60,6 +60,31 @@ namespace ComputacionCientifica
         }
 
         //Interferencia 2 Ondas
+        public void interferencia2(Bitmap pantalla)
+        {
+            
+            int i, j, colorO;
+            z = 0;
+            for (i = 0; i < 650; i++)
+            {
+                for (j = 0; j < 500; j++)
+                {
+                    z = 0;
+                    Procesos.transforma(i, j, out x, out y);
+                    for (int k = -10; k < 11; k++)
+                    {
+                        z1 = w * (Math.Sqrt((x + k) * (x + k) + (y - 0) * (y - 0))) - v * t;
+                        z1 = Math.Sin(z1) + 1;
+                        z += z1;
+                    }
+                    colorO = (int)((11 + z) % 15);
+                    c = Paleta[colorO];
+                    pantalla.SetPixel(i, j, c);
+
+                }
+
+            }
+        }
         public void interferencia(Bitmap pantalla)
         {
             int i, j, colorO;
@@ -68,10 +93,28 @@ namespace ComputacionCientifica
             {
                 for (j = 0; j < 500; j++)
                 {
+                    //Procesos.transforma(i, j, out x, out y);
+                    //z1 = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
+                    //z2 = w * (Math.Sqrt((x - 0) * (x - 0) + (y + 3) * (y + 3))) - v * t;
+                    //z3 = w * (Math.Sqrt((x +4) * (x +4) + (y + 2) * (y + 2))) - v * t;//tercera onda...
+
+                    //z1 = Math.Sin(z1) + 1;
+                    //z2 = Math.Sin(z2) + 1;
+                    //z3 = Math.Sin(z3) + 1;
+
+                    //z = z1 + z2 + z3; //
+                    //colorO = (int)(z * 1.75);
+                    //c = Paleta[colorO];
+                    //pantalla.SetPixel(i, j, c);
+
                     Procesos.transforma(i, j, out x, out y);
-                    z1 = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
+                    for(int l=0;l<20;l++)
+                    {
+
+                    }
+                    z1 = w * (Math.Sqrt((x +10) * (x + 10) + (y - 0) * (y - 3))) - v * t;
                     z2 = w * (Math.Sqrt((x - 0) * (x - 0) + (y + 3) * (y + 3))) - v * t;
-                    z3 = w * (Math.Sqrt((x +4) * (x +4) + (y + 2) * (y + 2))) - v * t;//tercera onda...
+                    z3 = w * (Math.Sqrt((x + 4) * (x + 4) + (y + 2) * (y + 2))) - v * t;//tercera onda...
 
                     z1 = Math.Sin(z1) + 1;
                     z2 = Math.Sin(z2) + 1;
@@ -81,7 +124,6 @@ namespace ComputacionCientifica
                     colorO = (int)(z * 1.75);
                     c = Paleta[colorO];
                     pantalla.SetPixel(i, j, c);
-
                 }
 
             }
@@ -100,7 +142,7 @@ namespace ComputacionCientifica
                     z = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 0) * (y - 0))) - v * t;
                     z = 0.5 * Math.Sin(z);
                     v3d.z0 = z;
-                    v3d.color0 = Color.DarkRed;
+                    v3d.color0 = Color.DarkGreen;
                     v3d.Encender(pantalla);
                     y = y + 0.1;
                 } while (y <= 5);
@@ -129,12 +171,12 @@ namespace ComputacionCientifica
                     z0 = 0.5 * Math.Sin(p2);
                   
                     v3d.z0 = z + z0;
-                    v3d.color0 = Color.Black;
+                    v3d.color0 = Color.DarkGreen; ;
                     v3d.Encender(bitmap);
 
-                    y = y + 0.05;
+                    y = y + 0.09;
                 } while (y <= 6);
-                x = x + 0.05;
+                x = x + 0.09;
             } while (x <= 7);
 
         }

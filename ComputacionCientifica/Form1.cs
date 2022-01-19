@@ -353,18 +353,22 @@ namespace ComputacionCientifica
             //EspacioT.Image = lienzo;
 
             //Con animacion
-
+            o.v = 9.3;
+            o.w = 1.5;
+            o.interferencia2(lienzo);
+            EspacioT.Image = lienzo;
+            EspacioT.Refresh();
             //Una 3 Onda
-            do
-            {
-                o.v = 9.3;
-                o.w = 1.5;
-                o.interferencia(lienzo);
-                EspacioT.Image = lienzo;
-                EspacioT.Refresh();
-                t = t + 0.1;
-                o.t = t;
-            } while (t <= 3);
+            //do
+            //{
+            //    o.v = 9.3;
+            //    o.w = 1.5;
+            //    o.interferencia2(lienzo);
+            //    EspacioT.Image = lienzo;
+            //    EspacioT.Refresh();
+            //    t = t + 0.1;
+            //    o.t = t;
+            //} while (t <= 3);
 
             //do
             //{
@@ -474,23 +478,10 @@ namespace ComputacionCientifica
             //Animacion Una onda 3D
             o.v = 9.8;
             o.w = 1.5;
-            do
-            {
-                o.t = t;
-                o.grafOnda3d(lienzo);
-                EspacioT.Image = lienzo;
-                Refresh();
-                lienzo = null;
-                lienzo = new Bitmap(650, 500);
-                Thread.Sleep(5);
-                t = t + 0.01;
-            } while (t <= 4);
-
-            //Animacion Dos ondas 3D
             //do
             //{
             //    o.t = t;
-            //    o.ondaMoverx2(lienzo);
+            //    o.grafOnda3d(lienzo);
             //    EspacioT.Image = lienzo;
             //    Refresh();
             //    lienzo = null;
@@ -499,6 +490,18 @@ namespace ComputacionCientifica
             //    t = t + 0.01;
             //} while (t <= 4);
 
+            //Animacion Dos ondas 3D
+            do
+            {
+                o.t = t;
+                o.ondaMoverx2(lienzo);
+                EspacioT.Image = lienzo;
+                Refresh();
+                lienzo = null;
+                lienzo = new Bitmap(650, 500);
+                Thread.Sleep(5);
+                t = t + 0.03;
+            } while (t <= 4);
 
         }
     }
