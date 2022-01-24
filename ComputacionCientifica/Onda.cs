@@ -93,26 +93,8 @@ namespace ComputacionCientifica
             {
                 for (j = 0; j < 500; j++)
                 {
-                    //Procesos.transforma(i, j, out x, out y);
-                    //z1 = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
-                    //z2 = w * (Math.Sqrt((x - 0) * (x - 0) + (y + 3) * (y + 3))) - v * t;
-                    //z3 = w * (Math.Sqrt((x +4) * (x +4) + (y + 2) * (y + 2))) - v * t;//tercera onda...
-
-                    //z1 = Math.Sin(z1) + 1;
-                    //z2 = Math.Sin(z2) + 1;
-                    //z3 = Math.Sin(z3) + 1;
-
-                    //z = z1 + z2 + z3; //
-                    //colorO = (int)(z * 1.75);
-                    //c = Paleta[colorO];
-                    //pantalla.SetPixel(i, j, c);
-
                     Procesos.transforma(i, j, out x, out y);
-                    for(int l=0;l<20;l++)
-                    {
-
-                    }
-                    z1 = w * (Math.Sqrt((x +10) * (x + 10) + (y - 0) * (y - 3))) - v * t;
+                    z1 = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
                     z2 = w * (Math.Sqrt((x - 0) * (x - 0) + (y + 3) * (y + 3))) - v * t;
                     z3 = w * (Math.Sqrt((x + 4) * (x + 4) + (y + 2) * (y + 2))) - v * t;//tercera onda...
 
@@ -124,6 +106,8 @@ namespace ComputacionCientifica
                     colorO = (int)(z * 1.75);
                     c = Paleta[colorO];
                     pantalla.SetPixel(i, j, c);
+
+
                 }
 
             }

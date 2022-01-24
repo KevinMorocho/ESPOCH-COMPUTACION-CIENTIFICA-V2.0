@@ -352,13 +352,14 @@ namespace ComputacionCientifica
             //o.interferencia(lienzo);
             //EspacioT.Image = lienzo;
 
-            //Con animacion
+            //Principio de Huygens
             o.v = 9.3;
             o.w = 1.5;
             o.interferencia2(lienzo);
             EspacioT.Image = lienzo;
             EspacioT.Refresh();
             //Una 3 Onda
+            //Con animacion
             //do
             //{
             //    o.v = 9.3;
@@ -469,15 +470,15 @@ namespace ComputacionCientifica
             Onda o = new Onda();
             double t = 0;
             //Sin animacion
-            //o.v = 9.3;
-            //o.w = 2.5;
-            //o.t = 0;
-            //o.grafOnda3d(lienzo);
-            //EspacioT.Image = lienzo;
+            o.v = 9.3;
+            o.w = 2.5;
+            o.t = 0;
+            o.grafOnda3d(lienzo);
+            EspacioT.Image = lienzo;
 
             //Animacion Una onda 3D
-            o.v = 9.8;
-            o.w = 1.5;
+            //o.v = 9.8;
+            //o.w = 1.5;
             //do
             //{
             //    o.t = t;
@@ -491,18 +492,48 @@ namespace ComputacionCientifica
             //} while (t <= 4);
 
             //Animacion Dos ondas 3D
+            //do
+            //{
+            //    o.t = t;
+            //    o.ondaMoverx2(lienzo);
+            //    EspacioT.Image = lienzo;
+            //    Refresh();
+            //    lienzo = null;
+            //    lienzo = new Bitmap(650, 500);
+            //    Thread.Sleep(5);
+            //    t = t + 0.03;
+            //} while (t <= 4);
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            double x;
+            Vector v = new Vector();
+            Segmento S = new Segmento();
+            S.x0 = -14;
+            S.xf = 14;
+            S.y0 = 0;
+            S.yf = 0;
+            S.color0 = Color.Red;
+            S.Encender(lienzo);
+            S.x0 = 0;
+            S.xf = 0;
+            S.y0 = -10.77;
+            S.yf = 10.77;
+            S.color0 = Color.Red;
+            S.Encender(lienzo);
+
+            x = -14;
             do
             {
-                o.t = t;
-                o.ondaMoverx2(lienzo);
+                v.x0 = x;
+                v.y0 = -(x + 14)*(x - 14) / 24.5;
+                v.color0 = Color.DarkGreen;
+                v.Encender(lienzo);
                 EspacioT.Image = lienzo;
-                Refresh();
-                lienzo = null;
-                lienzo = new Bitmap(650, 500);
-                Thread.Sleep(5);
-                t = t + 0.03;
-            } while (t <= 4);
-
+                x = x + 0.01;
+            } while (x <= 14);
         }
     }
 }
