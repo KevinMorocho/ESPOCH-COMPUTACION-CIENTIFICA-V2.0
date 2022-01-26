@@ -535,5 +535,28 @@ namespace ComputacionCientifica
                 x = x + 0.01;
             } while (x <= 14);
         }
+
+        int px, py;
+        double cx, cy;
+
+        private void EspacioT_MouseClick(object sender, MouseEventArgs e)
+        {
+            Circunferencia c = new Circunferencia();
+            px = e.X;
+            py = e.Y;
+            c.transforma(px, py, out cx, out cy);
+            c.Radio = 0.4;
+            c.x0 = cx;
+            c.y0 = cy;
+            c.color0 =Color.Red;
+            c.Encender(lienzo);
+            EspacioT.Image = lienzo;
+
+        }
+
+        private void EspacioT_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

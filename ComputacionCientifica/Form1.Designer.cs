@@ -58,6 +58,8 @@ namespace ComputacionCientifica
             this.EspacioT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.EspacioT.TabIndex = 0;
             this.EspacioT.TabStop = false;
+            this.EspacioT.Click += new System.EventHandler(this.EspacioT_Click);
+            this.EspacioT.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EspacioT_MouseClick);
             // 
             // button1
             // 
