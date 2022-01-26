@@ -542,13 +542,47 @@ namespace ComputacionCientifica
         private void EspacioT_MouseClick(object sender, MouseEventArgs e)
         {
             Circunferencia c = new Circunferencia();
+            Segmento s = new Segmento();
+            Segmento s1 = new Segmento();
+            Segmento s2 = new Segmento();
+
             px = e.X;
             py = e.Y;
             c.transforma(px, py, out cx, out cy);
-            c.Radio = 0.4;
+            c.Radio = 0.2;
             c.x0 = cx;
             c.y0 = cy;
-            c.color0 =Color.Red;
+            c.color0 =Color.Black;
+            s.x0 = cx;
+            s.y0 = cy;
+            s.xf = cx;
+            s.yf= -(cx + 14) * (cx - 14) / 24.5;
+            s.color0 = Color.Red;
+            s1.x0 = -14;
+            s1.y0 = (-2*cx/24.5)*(-14-cx)+(-(cx + 14) * (cx - 14) / 24.5);//punto inicio
+            s1.xf = 14;
+            s1.yf = (-2 * cx / 24.5) * (14 - cx) + (-(cx + 14) * (cx - 14) / 24.5);//punto fin
+            s1.color0 = Color.Green;
+            if (cx > 0)
+            {
+                s2.x0 = cx;
+                s2.y0 = -(cx + 14) * (cx - 14) / 24.5;
+                s2.xf = -14;
+                s2.yf = Math.Tan(90 + 2 * Math.Atan(-2 * cx / 24.5)) * (-14 - cx) + (-(cx + 14) * (cx - 14) / 24.5);
+                s2.color0 = Color.Yellow;
+                s2.Encender(lienzo);
+            }
+            else
+            {
+                s2.x0 = cx;
+                s2.y0 = -(cx + 14) * (cx - 14) / 24.5;
+                s2.xf = 14;
+                s2.yf = Math.Tan(90 + 2 * Math.Atan(-2 * cx / 24.5)) * (14 - cx) + (-(cx + 14) * (cx - 14) / 24.5);
+                s2.color0 = Color.Yellow;
+                s2.Encender(lienzo);
+            }
+            s1.Encender(lienzo);
+            s.Encender(lienzo);
             c.Encender(lienzo);
             EspacioT.Image = lienzo;
 

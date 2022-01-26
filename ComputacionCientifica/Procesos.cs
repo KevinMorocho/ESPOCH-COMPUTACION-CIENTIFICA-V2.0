@@ -12,14 +12,14 @@ namespace ComputacionCientifica
         public static int sx2 = 650;
         public static int sy1 = 0;
         public static int sy2 = 500;
-        //public static double x1 = -14;
-        //public static double x2 = 14;
-        //public static double y1 = -10.77;
-        //public static double y2 = 10.77;
-        public static double x1 = -8;
-        public static double x2 = 8;
-        public static double y1 = -6.15;
-        public static double y2 = 6.15;
+        public static double x1 = -14;
+        public static double x2 = 14;
+        public static double y1 = -10.77;
+        public static double y2 = 10.77;
+        //public static double x1 = -8;
+        //public static double x2 = 8;
+        //public static double y1 = -6.15;
+        //public static double y2 = 6.15;
         public Procesos() { }
         public static void pantalla(double x, double y, out int sx, out int sy)
         {
