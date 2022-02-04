@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circunferencia.cs" />
+    <Compile Include="CuerdaV.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

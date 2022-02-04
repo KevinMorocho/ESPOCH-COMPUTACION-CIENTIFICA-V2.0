@@ -536,11 +536,62 @@ namespace ComputacionCientifica
             } while (x <= 14);
         }
 
-        int px, py;
-        double cx, cy;
+        
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Segmento S = new Segmento();
+            CuerdaV cv = new CuerdaV();
+
+            //Sin Animacion
+            S.x0 = -14;
+            S.xf = 14;
+            S.y0 = 0;
+            S.yf = 0;
+            S.color0 = Color.Red;
+            S.Encender(lienzo);
+            S.x0 = 0;
+            S.xf = 0;
+            S.y0 = -10.77;
+            S.yf = 10.77;
+            S.color0 = Color.Red;
+            S.Encender(lienzo);
+            cv.tiempo = 0.5525138421;
+            cv.GraficoFourier(lienzo);
+            EspacioT.Image = lienzo;
+
+            //Animacion
+            //double t = 0;
+            //do
+            //{
+            //    S.x0 = -14;
+            //    S.xf = 14;
+            //    S.y0 = 0;
+            //    S.yf = 0;
+            //    S.color0 = Color.Red;
+            //    S.Encender(lienzo);
+            //    S.x0 = 0;
+            //    S.xf = 0;
+            //    S.y0 = -10.77;
+            //    S.yf = 10.77;
+            //    S.color0 = Color.Red;
+            //    S.Encender(lienzo);
+            //    cv.tiempo = t;
+            //    cv.GraficoFourier(lienzo);
+            //    EspacioT.Image = lienzo;
+            //    Refresh();
+            //    lienzo = null;
+            //    lienzo = new Bitmap(650, 500);
+            //    Thread.Sleep(5);
+            //    t = t + 0.05;
+            //} while (t <= 2);
+
+        }
 
         private void EspacioT_MouseClick(object sender, MouseEventArgs e)
         {
+            int px, py;
+            double cx, cy;
             Circunferencia c = new Circunferencia();
             Segmento s = new Segmento();
             Segmento s1 = new Segmento();
