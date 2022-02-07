@@ -94,9 +94,9 @@ namespace ComputacionCientifica
                 for (j = 0; j < 500; j++)
                 {
                     Procesos.transforma(i, j, out x, out y);
-                    z1 = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
-                    z2 = w * (Math.Sqrt((x - 0) * (x - 0) + (y + 3) * (y + 3))) - v * t;
-                    z3 = w * (Math.Sqrt((x + 4) * (x + 4) + (y + 2) * (y + 2))) - v * t;//tercera onda...
+                    z1 = w * (Math.Sqrt((x + 4) * (x + 4) + (y - 0) * (y - 0))) - v * t;
+                    z2 = w * (Math.Sqrt((x - 1) * (x - 1) + (y -0) * (y - 0))) - v * t;
+                    z3 = w * (Math.Sqrt((x + 1.5) * (x + 1.5) + (y - 4.33) * (y - 4.33))) - v * t;//tercera onda...
 
                     z1 = Math.Sin(z1) + 1;
                     z2 = Math.Sin(z2) + 1;
@@ -137,7 +137,7 @@ namespace ComputacionCientifica
         public void ondaMoverx2(Bitmap bitmap)
         {
             Vector3D v3d = new Vector3D();
-            double p, p2, z, z0;
+            double p, p2, z, z0,p3,z1;
 
             x = -7;
             do
@@ -148,13 +148,15 @@ namespace ComputacionCientifica
                     v3d.x0 = x;
                     v3d.y0 = y;
 
-                    p = w * (Math.Sqrt((x - 0) * (x - 0) + (y - 3) * (y - 3))) - v * t;
+                    p = w * (Math.Sqrt((x + 4) * (x + 4) + (y - 0) * (y - 0))) - v * t;
                     z = 0.5 * Math.Sin(p);
 
-                    p2 = w * (Math.Sqrt((x +0) * (x +0) + (y +3) * (y +3))) - v * t;
+                    p2 = w * (Math.Sqrt((x -1) * (x -1) + (y +0) * (y +0))) - v * t;
                     z0 = 0.5 * Math.Sin(p2);
-                  
-                    v3d.z0 = z + z0;
+
+                    p3 = w * (Math.Sqrt((x + 1.5) * (x + 1.5) + (y - 4.33) * (y -4.33))) - v * t;
+                    z1 = 0.5 * Math.Sin(p2);
+                    v3d.z0 = z + z0+z1;
                     v3d.color0 = Color.DarkGreen; ;
                     v3d.Encender(bitmap);
 

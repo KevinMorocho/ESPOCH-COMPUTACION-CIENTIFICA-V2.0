@@ -556,7 +556,7 @@ namespace ComputacionCientifica
             S.yf = 10.77;
             S.color0 = Color.Red;
             S.Encender(lienzo);
-            cv.tiempo = 0.5525138421;
+            cv.tiempo = 3;
             cv.GraficoFourier(lienzo);
             EspacioT.Image = lienzo;
 
@@ -582,9 +582,9 @@ namespace ComputacionCientifica
             //    Refresh();
             //    lienzo = null;
             //    lienzo = new Bitmap(650, 500);
-            //    Thread.Sleep(5);
+            //    Thread.Sleep(3);
             //    t = t + 0.05;
-            //} while (t <= 2);
+            //} while (t <= 3);
 
         }
 
@@ -642,6 +642,16 @@ namespace ComputacionCientifica
         private void EspacioT_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            pintaFondo(Color.White);
+            Onda o = new Onda();
+            o.v = 9.3;
+            o.w = 1.5;
+            o.interferencia(lienzo);
+            EspacioT.Image = lienzo;
         }
     }
 }

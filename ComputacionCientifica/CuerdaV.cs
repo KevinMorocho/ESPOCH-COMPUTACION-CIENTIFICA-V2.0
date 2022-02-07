@@ -20,26 +20,23 @@ namespace ComputacionCientifica
         }
         public void Fourier(double x, out double fou)
         {
-            double an, bn, sumF = 0;
-            int n = 0;
-
+            double an, bn, SumF, c = 1, g = 2, l = 8;
+            double f = ((x * (8 - x)) / 3);
+            //double f = 0.5;
+            int n;
+            SumF = 0;
+            n = 0;
             do
             {
                 n = n + 1;
-                //Se aplica Formula de Simpson a continuacion ejemplo de formula
-                //an = (l-0/6)* (f(0)sin(n*pi*0)+4*f(4)*sin(n*pi*4/l)+f(8)*sin(n*pi*8/l)) l=8
-
-                an = 1.33 * (0 + 4 * fx(4) * Math.Sin(n * Math.PI * 0.5) + fx(8) * Math.Sin(n * Math.PI));
+                an = (1.33) * (0 + 4 * 5.33 * Math.Sin(n * 3.14 * 3) + 0 * Math.Sin(n * 3.14 * 7)); //0.5 en ves de 3, f(4 en ves de 3
                 an = an * (0.25);
-
-                bn = 1.33 * (0 + 4 * gx(4) * Math.Sin(n * Math.PI * 0.5) + gx(8) * Math.Sin(n * Math.PI)); ;
-                bn = bn * (2 / (n * Math.PI));
-
-                sumF = sumF + (an * Math.Cos((n * Math.PI * tiempo) / 8) + bn * Math.Sin((n * Math.PI * tiempo) / 8)) * Math.Sin(n * 3.14 * x / 8);
-
-            } while (n <= 20);
-
-            fou = sumF;
+                bn = (1.33) * (0 + 4 * 4 * Math.Sin(n * 3.14 * 3) + 8 * Math.Sin(n * 3.14 * 7));
+                bn = bn * 2 / (n * 3.14 * 1);
+                SumF = SumF + (an * Math.Cos((n * 3.14 * c * tiempo) / l) + bn * Math.Sin((n * 3.14 * c * tiempo) / l)) * Math.Sin(n * 3.14 * x / l);
+            }
+            while (n <= 18);
+            fou = SumF;
         }
         public void GraficoFourier(Bitmap pantalla)
         {
@@ -57,16 +54,16 @@ namespace ComputacionCientifica
                 v.color0 = Color.Blue;
                 v.Encender(pantalla);
 
-                s.x0 = x;
-                s.y0 = fou;
-                s.color0 = Color.Blue;
-                s.Encender(pantalla);
-                s.xf = x;
-                s.yf = fou;
+                //s.xf = x;
+                //s.yf = fou;
+                //s.color0 = Color.Blue;
+                ////s.Encender(pantalla);
+                //s.x0 = x;
+                //s.y0 = fou;
                 //}
-                //Console.WriteLine(fou);
+                Console.WriteLine(fou);
 
-                x = x + 0.05;
+                x = x + 0.00055;
             } while (x <= 8);
         }
     }

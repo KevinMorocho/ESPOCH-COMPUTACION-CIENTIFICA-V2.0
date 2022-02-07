@@ -16,8 +16,8 @@ namespace ComputacionCientifica
         public static double x2 = 14;
         public static double y1 = -10.77;
         public static double y2 = 10.77;
-        //public static double x1 = -8;
-        //public static double x2 = 8;
+        //public static double x1 = -10;
+        //public static double x2 = 10;
         //public static double y1 = -6.15;
         //public static double y2 = 6.15;
         public Procesos() { }
