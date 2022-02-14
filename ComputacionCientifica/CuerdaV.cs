@@ -51,19 +51,19 @@ namespace ComputacionCientifica
                 //if (fou <= 10.77)
                 //{
                 v.y0 = fou;
-                v.color0 = Color.Blue;
+                v.color0 = Color.DarkGreen;
                 v.Encender(pantalla);
 
                 //s.xf = x;
                 //s.yf = fou;
                 //s.color0 = Color.Blue;
-                ////s.Encender(pantalla);
+                //s.Encender(pantalla);
                 //s.x0 = x;
                 //s.y0 = fou;
                 //}
                 Console.WriteLine(fou);
 
-                x = x + 0.00055;
+                x = x + 0.0015;
             } while (x <= 8);
         }
     }

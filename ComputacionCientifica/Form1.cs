@@ -419,50 +419,35 @@ namespace ComputacionCientifica
         private void button12_Click(object sender, EventArgs e)
         {
             Vector3D w = new Vector3D();
-            double h = 0, t;
-            //do
-            //{
-            //    w.x0 = 1 + ((3 - h/5) * Math.Sin(h));
-            //    w.y0 = -1 + ((4 - h/5) * Math.Cos(h));
-            //    w.z0 = (h / 3)-2;
-            //    w.color0 = Color.Red;
-            //    w.Encender(lienzo);
-            //    EspacioT.Image = lienzo;
-            //    h = h + 0.05;
-            //} while (h <= 15);
-            //do
-            //{
-            //    t = 0;
-            //    do
-            //    {
-            //        w.x0 = -2 + 3 * Math.Cos(t);
-            //        w.y0 = h;
-            //        w.z0 = 1 + 3 * Math.Sin(t);
-            //        w.color0 = Color.Red;
-            //        w.Encender(lienzo);
-            //        EspacioT.Image = lienzo;
-            //        t = t + 0.1;
+            double h = 0;
+            w.color0 = Color.Red;
+            /*do
+            {
+                w.x0 = 1 + (3 - (h / 5)) * Math.Sin(h);
+                w.y0 = -1 + (4 - (h / 5)) * Math.Cos(h);
+                w.z0 = (h / 3) - 2;
+                w.Encender(lienzo);
+                h = h + 0.005;
+                pictureBox1.Image = lienzo;
+            } while (h <= 15);*/
+
+            do
+            {
+                double t = 0;
+                do
+                {
+                    w.x0 = -2 + 3 * Math.Cos(t);
+                    w.z0 = h - 3;
+                    w.y0 = 1 + 3 * Math.Sin(t);
+                    w.Encender(lienzo);
+                    EspacioT.Image = lienzo;
+                    t = t + 0.1;
 
 
-            //    } while (t <= 15);
-            //    h = h + 0.1;
-            //} while (h <= 6.3);
-            //do
-            //{
-            //    t = 0;
-            //    do
-            //    {
-            //        w.x0 = -2 + 3 * Math.Cos(t);
-            //        w.y0 =  1 + 3 * Math.Sin(t);
-            //        w.z0 = h-3;
-            //        w.color0 = Color.Red;
-            //        w.Encender(lienzo);
-            //        EspacioT.Image = lienzo;
-            //        t = t + 0.1;
-            //    } while (t <= 15);
-            //    h = h + 0.1;
-            //} while (h <= 6.3);
-            
+                } while (t <= 15);
+                h = h + 0.1;
+            } while (h <= 6.3);
+
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -544,47 +529,47 @@ namespace ComputacionCientifica
             CuerdaV cv = new CuerdaV();
 
             //Sin Animacion
-            S.x0 = -14;
-            S.xf = 14;
-            S.y0 = 0;
-            S.yf = 0;
-            S.color0 = Color.Red;
-            S.Encender(lienzo);
-            S.x0 = 0;
-            S.xf = 0;
-            S.y0 = -10.77;
-            S.yf = 10.77;
-            S.color0 = Color.Red;
-            S.Encender(lienzo);
-            cv.tiempo = 3;
-            cv.GraficoFourier(lienzo);
-            EspacioT.Image = lienzo;
+            //S.x0 = -14;
+            //S.xf = 14;
+            //S.y0 = 0;
+            //S.yf = 0;
+            //S.color0 = Color.Blue;
+            //S.Encender(lienzo);
+            //S.x0 = 0;
+            //S.xf = 0;
+            //S.y0 = -10.77;
+            //S.yf = 10.77;
+            //S.color0 = Color.Blue;
+            //S.Encender(lienzo);
+            //cv.tiempo = 3;
+            //cv.GraficoFourier(lienzo);
+            //EspacioT.Image = lienzo;
 
             //Animacion
-            //double t = 0;
-            //do
-            //{
-            //    S.x0 = -14;
-            //    S.xf = 14;
-            //    S.y0 = 0;
-            //    S.yf = 0;
-            //    S.color0 = Color.Red;
-            //    S.Encender(lienzo);
-            //    S.x0 = 0;
-            //    S.xf = 0;
-            //    S.y0 = -10.77;
-            //    S.yf = 10.77;
-            //    S.color0 = Color.Red;
-            //    S.Encender(lienzo);
-            //    cv.tiempo = t;
-            //    cv.GraficoFourier(lienzo);
-            //    EspacioT.Image = lienzo;
-            //    Refresh();
-            //    lienzo = null;
-            //    lienzo = new Bitmap(650, 500);
-            //    Thread.Sleep(3);
-            //    t = t + 0.05;
-            //} while (t <= 3);
+            double t = 0;
+            do
+            {
+                S.x0 = -14;
+                S.xf = 14;
+                S.y0 = 0;
+                S.yf = 0;
+                S.color0 = Color.Black;
+                S.Encender(lienzo);
+                S.x0 = 0;
+                S.xf = 0;
+                S.y0 = -10.77;
+                S.yf = 10.77;
+                S.color0 = Color.Black;
+                S.Encender(lienzo);
+                cv.tiempo = t;
+                cv.GraficoFourier(lienzo);
+                EspacioT.Image = lienzo;
+                Refresh();
+                lienzo = null;
+                lienzo = new Bitmap(650, 500);
+                Thread.Sleep(3);
+                t = t + 0.5;
+            } while (t <= 7.5);
 
         }
 
@@ -652,6 +637,23 @@ namespace ComputacionCientifica
             o.w = 1.5;
             o.interferencia(lienzo);
             EspacioT.Image = lienzo;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            pintaFondo(Color.White);
+            Segmento S = new Segmento();
+            S.x0 = -3;
+            S.xf = 5;
+            S.y0 = 1;
+            S.yf = 4;
+            S.EncenderDegradado(lienzo);
+            EspacioT.Image = lienzo;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
